@@ -1,5 +1,6 @@
 /// Name of the blanks file
 #define BLANKS_FILE_NAME "config/blanks.json"
+#define BLANKS_CONTENT_FOLDER "config/blanks_content"
 
 /// For use with the `color_mode` var. Photos will be printed in greyscale while the var has this value.
 #define PHOTO_GREYSCALE "Greyscale"

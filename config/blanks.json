@@ -2,102 +2,108 @@
 	"code": "NT",
 		"category": "Общие формы",
 		"name": "Бланк для любых целей",
-		"info": "./blanks/NT_form.md"
+		"info": "NT_form.md"
 	},
 	{
 		"code": "NT-E-112",
 		"category": "Общие формы",
 		"name": "Экстренное Письмо",
-		"info":"./blanks/nt_e_112.md"
+		"info":"nt_e_112.md"
 	},
 	{
 		"code": "NT-COM-ACAP",
 		"category": "Главы станции",
 		"name": "Заявление о повышении глвы отдела до и.о. капитана",
-		"info":"./blanks/com/nt_com_acap.md"
+		"info":"com/nt_com_acap.md"
 	},
 	{
 		"code": "NT-COM-ACOM",
 		"category":"Главы станции",
 		"name": "Заявление о повышении сотрудника до и.о. главы отдела",
-		"info": "./blanks/com/nt_com_acom.md"
+		"info": "com/nt_com_acom.md"
 	},
 	{
 		"code": "NT-COM-LCOM",
 		"category":"Главы станции",
 		"name": "Заявление об увольнении главы отделения",
-		"info":"./blanks/com/nt_com_lcom.md"
+		"info":"com/nt_com_lcom.md"
 	},
 	{
 		"code": "NT-COM-OS",
 		"category":"Главы станции",
 		"name": "Отчёт об выполнении цели",
-		"info":"./blanks/com/nt_com_os.md"
+		"info":"com/nt_com_os.md"
 	},
 	{
 		"code": "NT-COM-REQ",
 		"category":"Главы станции",
 		"name": "Запрос на поставку с Центрального командования",
-		"info":"./blanks/com/nt_com_req.md"
+		"info":"com/nt_com_req.md"
 	},
 	{
 		"code":"NT-COM-ST",
 		"category":"Главы станции",
 		"name": "Отчёт о ситуации на станции",
-		"info":"./blanks/com/nt_com_st.md"
+		"info":"com/nt_com_st.md"
 	},
 	{
 		"code":"NT-HR-00",
 		"category":"Отдел кадров",
 		"name":"Бланк заявления",
-		"info":"./blanks/hr/nt_hr_00.md"
+		"info":"hr/nt_hr_00.md"
 	},
 	{
 		"code": "NT-HR-01",
 		"category":"Отдел кадров",
 		"name":"Заявление о приеме на работу",
-		"info":"./blanks/hr/nt_hr_01.md"
+		"info":"hr/nt_hr_01.md"
 	},
 	{
 		"code": "NT-HR-02",
 		"category":"Отдел кадров",
 		"name":"Заявление на смену должности",
-		"info":"./blanks/hr/nt_hr_02.md"
+		"info":"hr/nt_hr_02.md"
 	},
 	{
 		"code": "NT-HR-03",
 		"category":"Отдел кадров",
 		"name":"Заявление об увольнении",
-		"info":"./blanks/hr/nt_hr_03.md"
+		"info":"hr/nt_hr_03.md"
 	},
 	{
 		"code": "NT-HR-04",
 		"category":"Отдел кадров",
 		"name":"Заявление на выдачу новой ID карты",
-		"info":"./blanks/hr/nt_hr_04.md"
+		"info":"hr/nt_hr_04.md"
 	},
 	{
 		"code": "NT-HR-05",
 		"category":"Отдел кадров",
 		"name":"Заявление на дополнительный доступ",
-		"info":"./blanks/hr/nt_hr_05.md"
+		"info":"hr/nt_hr_05.md"
 	},
 	{
 		"code": "NT-HR-06",
 		"category":"Отдел кадров",
 		"name":"Лицензия на создание организации/отдела",
-		"info":"./blanks/hr/nt_hr_06.md"
+		"info":"hr/nt_hr_06.md"
 	},
 	{
 		"code":"NT-HR-07",
 		"category":"Отдел кадров",
 		"name": "Разрешение на перестройку/перестановку",
-		"info":"./blanks/hr/nt_hr_07.md"
+		"info":"hr/nt_hr_07.md"
 	},
 	{
 		"code":"NT-HR-08",
 		"category":"Отдел кадров",
 		"name":"Запрос о постройке меха",
-		"info":"./blanks/hr/nt_hr_08.md"
+		"info":"hr/nt_hr_08.md"
+	},
+	{
+		"code":"NT-HR-09",
+		"category":"Отдел кадров",
+		"name":"Квитанция о продаже пода",
+		"info":"hr/nt_hr_09.md"
 	}
 ]
