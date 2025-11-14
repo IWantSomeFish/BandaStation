@@ -27,8 +27,8 @@
 	health = 100
 
 	obj_damage = 60
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	melee_damage_lower = 10
+	melee_damage_upper = 15
 	wound_bonus = -5
 	exposed_wound_bonus = 10
 	sharpness = SHARP_EDGED
@@ -50,21 +50,24 @@
 
 	ai_controller = /datum/ai_controller/basic_controller/lizard/big
 
-	var/static/list/food_types = list(
-		/obj/item/food/meat,
-		/obj/item/food/deadmouse,
-		/mob/living/basic/mouse
-	)
-
 /mob/living/basic/lizard/big/Initialize(mapload)
 	. = ..()
-	add_traits(list(TRAIT_FENCE_CLIMBER), INNATE_TRAIT)
+	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_FENCE_CLIMBER, INNATE_TRAIT)
 	AddElement(/datum/element/ai_retaliate)
 	AddElement(/datum/element/footstep, FOOTSTEP_MOB_CLAW)
 	AddElement(/datum/element/nerfed_pulling, GLOB.typecache_general_bad_things_to_easily_move)
-	AddElement(/datum/element/basic_eating, heal_amt = 10, food_types = food_types)
 	AddComponent(/datum/component/health_scaling_effects, min_health_slowdown = 1.5)
-	ai_controller.set_blackboard_key(BB_BASIC_FOODS, typecacheof(food_types))
+
+	var/static/list/food_types = list(
+		/obj/item/food/meat,
+		/obj/item/food/deadmouse,
+		/mob/living/basic/mouse,
+		/mob/living/basic/butterfly,
+		/mob/living/basic/cockroach,
+	)
+	AddElement(/datum/element/basic_eating, heal_amt = 5, food_types = food_types)
+	ai_controller.override_blackboard_key(BB_BASIC_FOODS, typecacheof(food_types))
 
 /mob/living/basic/lizard/big/gator
 	name = "аллигатор"
@@ -77,8 +80,8 @@
 	maxHealth = 300
 	health = 300
 	obj_damage = 80
-	melee_damage_lower = 30
-	melee_damage_upper = 80
+	melee_damage_lower = 20
+	melee_damage_upper = 35
 
 /mob/living/basic/lizard/big/croco
 	name = "крокодил"
@@ -90,5 +93,5 @@
 	maxHealth = 200
 	health = 200
 	obj_damage = 80
-	melee_damage_lower = 20
-	melee_damage_upper = 50
+	melee_damage_lower = 10
+	melee_damage_upper = 25
