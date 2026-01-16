@@ -21,7 +21,8 @@
 	desc = "Элегантные часы с титановым корпусом, вершина дизайна корпорации SELF. Созданы для доказательства того, что машины также способны творить шедевры искусства. Эта модель имеет несколько коннекторов для подключения неизвестных устройств."
 	var/CHIP_SLOTS = 2
 	var/chips = list()
-	var/actions_list = list()
+	actions = list()
+	action_slots = ITEM_SLOT_GLOVES
 
 /obj/item/clothing/gloves/skyfall/syndi/Initialize(mapload)
 	. = ..()
@@ -60,10 +61,16 @@
 				to_chat(user, span_warning("Этот чип уже установлен."))
 				return ITEM_INTERACT_BLOCKING
 		user.transferItemToLoc(tool, src)
-		chips += tool
+ч		LAZYADD(chips, tool)
+		LAZYADD(actions, get_chip_actions(tool))
+		for (var/datum/action/item_action/action in get_chip_actions(tool))
+			action.Grant(user)
 		playsound(src,pick('sound/machines/pda_button/pda_button1.ogg','sound/machines/pda_button/pda_button2.ogg'), 50, FALSE)
 		to_chat(user, span_notice("[tool.name] успешно установлен."))
 		return ITEM_INTERACT_SUCCESS
+	else
+		to_chat(user, span_warning("Этот предмет не может быть установлен в Skyfall Watch."))
+		return ITEM_INTERACT_BLOCKING
 
 /obj/item/clothing/gloves/skyfall/syndi/item_ctrl_click(mob/living/user)
 	. = ..()
@@ -82,8 +89,11 @@
 
 	try_put_in_hand(chip, user)
 	LAZYREMOVE(chips, chip)
+	LAZYREMOVE(actions, get_chip_actions(chip))
+	for (var/datum/action/item_action/action in get_chip_actions(chip))
+		action.Remove(user)
 	playsound(src,pick('sound/machines/pda_button/pda_button1.ogg','sound/machines/pda_button/pda_button2.ogg'), 50, FALSE)
-	to_chat(user, span_notice("Чип [chip.name] извлечен из Skyfall Watch."))
+	to_chat(user, span_notice("[chip.name] извлечен из Skyfall Watch."))
 	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/gloves/skyfall/syndi/proc/try_put_in_hand(obj/item/object, mob/living/user)
@@ -96,3 +106,6 @@
 /obj/item/clothing/gloves/skyfall/syndi/proc/check_interactable(mob/living/user)
 	PRIVATE_PROC(TRUE)
 	return user.can_perform_action(src, ALLOW_SILICON_REACH | FORBID_TELEKINESIS_REACH)
+
+/obj/item/clothing/gloves/skyfall/syndi/proc/get_chip_actions(obj/item/skyfall_chip/chip)
+	return chip.actions

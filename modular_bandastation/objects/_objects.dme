@@ -92,7 +92,6 @@
 #include "code/items/storage/tape_box.dm"
 #include "code/items/storage/ringbox.dm"
 #include "code/items/machine_designs.dm"
-
 #include "code/machinery/nuclear_bomb.dm"
 #include "code/machinery/papershredder.dm"
 #include "code/machinery/photocopier.dm"
