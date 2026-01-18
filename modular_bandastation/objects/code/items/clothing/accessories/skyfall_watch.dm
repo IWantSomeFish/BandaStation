@@ -61,7 +61,7 @@
 				to_chat(user, span_warning("Этот чип уже установлен."))
 				return ITEM_INTERACT_BLOCKING
 		user.transferItemToLoc(tool, src)
-ч		LAZYADD(chips, tool)
+		LAZYADD(chips, tool)
 		LAZYADD(actions, get_chip_actions(tool))
 		for (var/datum/action/item_action/action in get_chip_actions(tool))
 			action.Grant(user)
