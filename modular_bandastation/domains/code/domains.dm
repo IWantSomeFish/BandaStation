@@ -1,5 +1,6 @@
 #define SPAWN_ALWAYS 100
 #define SPAWN_LIKELY 85
+#define SPAWN_MODERATE 50
 #define SPAWN_UNLIKELY 35
 #define SPAWN_RARE 10
 
@@ -30,7 +31,7 @@
 		/mob/living/basic/trooper/nanotrasen/ranged/elite
 		)
 	/// Chance this will spawn (1 - 100)
-	probability = SPAWN_LIKELY
+	probability = SPAWN_MODERATE
 
 /datum/outfit/tsf/bitrun
 	name = "TSF - Marine (Bitrun)"
@@ -42,6 +43,7 @@
 
 #undef SPAWN_ALWAYS
 #undef SPAWN_LIKELY
+#undef SPAWN_MODERATE
 #undef SPAWN_UNLIKELY
 #undef SPAWN_RARE
 
@@ -72,11 +74,11 @@
 	icon_state = "whirlpool"
 	layer = ABOVE_OPEN_TURF_LAYER
 
-/obj/effect/abstract/whirlpool/Initialize(mapload)
+/turf/open/water/groundwater/whirlpool
+
+/turf/open/water/groundwater/whirlpool/Initialize(mapload)
 	. = ..()
-	var/turf/T = get_turf(src)
-	if(T && !T.GetComponent(/datum/component/chasm))
-		T.AddComponent(/datum/component/chasm, null, mapload)
+	AddComponent(/datum/component/chasm, null, mapload)
 
 /obj/effect/abstract/mist
 	name = "туман"
